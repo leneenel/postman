@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+请输入字符：<input type="text" id='d0'/>
+<hr />
+你是输入的字符为: <div id='d1'></div>
+
+<script>
+    var input = document.getElementById('d0')
+
+    var div = document.getElementById('d1');
+    input.oninput = function(){
+        div.innerHTML = input.value;
+    }
+
+</script>
+</body>
+</html>

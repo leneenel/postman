@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+    <!--<script type="text/javascript" src="jquery-2.1.4.js"></script>-->
+    <!--<script type="text/javascript" src="http-request.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+    <!--&lt;!&ndash;<div id="home_nav" class="nav_sub" onclick="getHome()">Home</div>&ndash;&gt;-->
+    <!--<div id="home_nav" class="nav_sub">Home</div>-->
+    <!--<textarea id="text" style="width: 400px; height: 100px;"></textarea>-->
+<!--</body>-->
+<!--</html>-->
+
+<html>
+<head lang="en">
+    <title>Title</title>
+    <script src="jquery-2.1.4.js"></script>
+    <script>
+
+        function showData (data) {
+            console.info("调用showData");
+
+            var result = JSON.stringify(data);
+            $("#text").val(result);
+        }
+
+        $(document).ready(function () {
+
+//            window.showData = function  (data) {
+//                console.info("调用showData");
+//
+//                var result = JSON.stringify(data);
+//                $("#text").val(result);
+//            }
+
+            $("#btn").click(function () {
+
+                $.ajax({
+                    url: "http://www.baidu.com",
+                    type: "GET",
+                    dataType: "jsonp",  //指定服务器返回的数据类型
+                    jsonpCallback: "showData",  //指定回调函数名称
+                    success: function (data) {
+                        console.info("调用success");
+                    }
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+<input id="btn" type="button" value="test" />
+<textarea id="text" style="width: 400px; height: 100px;"></textarea>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../res/css/postman.css" rel="stylesheet">
+    <link href="../res/css/searchbar.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+
+    </div>
+    <div class="left">
+        <div class="search bar1">
+            <input class="contentbox" type="text" placeholder="Filter">
+            <button type="submit"></button>
+        </div>
+        <div class="tabs">
+            <input checked class="History" id="one" name="tabs" type="radio">
+            <label class="his" for="one">History</label>
+            <input class="Collections" id="two" name="tabs" type="radio">
+            <label class="col" for="two">Collections</label>
+            <div class="panels">
+                <div class="panel">
+                    <div class="clearall">
+                        <label class="lab-clear">Clear all</label>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="collection-head">
+                        <label class="All">All</label>
+                        <label class="Me">Me</label>
+                        <label class="Team">Team</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="content-top">
+            <div class="content-header">
+                <ul class="nav-ul">
+                    <li class="nav-li">New Tab</li>
+                    <li class="nav-li">New Tab</li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="environment">
+
+        </div>
+        <div class="content-bottom">
+            <select class="method">
+                <option value="get">GET</option>
+                <option value="post">POST</option>
+                <option value="put">PUT</option>
+                <option value="patch">PATCH</option>
+                <option value="delete">DELETE</option>
+                <option value="copy">COPY</option>
+                <option value="head">HEAD</option>
+                <option value="options">OPTIONS</option>
+            </select>
+            <input id="request-url" class="request-url" type="text" placeholder="Enter request URL"/>
+            <!--<input id="request-url" class="request-url" type="text" value="Enter request URL"/>-->
+            <label class="params">Params</label>
+            <input id="send" class="send" type="button" value="Send"/>
+            <!--<select id="send" class="send">-->
+                <!--<option value="Send">Send</option>-->
+                <!--<option value="Send and Download">Send and Download</option>-->
+            <!--</select>-->
+            <select class="save">
+                <option value="Save">Save</option>
+                <option value="Save as...">Save as...</option>
+            </select>
+            <div id="reps" class="reps"></div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="../res/module/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="../res/js/postman.js"></script>
+</html>

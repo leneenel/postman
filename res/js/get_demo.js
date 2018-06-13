@@ -1,7 +1,6 @@
 exports.my_get = function(url){
     var http = require('http');
     var querystring = require('querystring');
-
     var options={
         hostname:"127.0.0.1",
         port:3001,
@@ -19,9 +18,15 @@ exports.my_get = function(url){
     }
 
     var req=http.request(options,function(res){
+        var buffers = [];
         res.setEncoding("utf-8");
         res.on("data",function(chunk){
-            console.log(chunk.toString())
+            // buffers.push(chunk);
+            // console.log(chunk.toString())
+        });
+        res.on('end',function(chunk){
+            // var wholeData = Buffer.concat(buffers);
+            // var dataStr = wholeData.toString('utf8');
         });
         // console.log(res.statusCode);
     });

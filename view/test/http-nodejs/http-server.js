@@ -11,7 +11,9 @@ var http = require('http');
 var server = new http.Server();
 server.on("request",function(req,res){
     res.writeHead(200,{
-        "content-type":"text/plain"
+        "content-type":"text/plain",
+        "Access-Control-Allow-Origin":"*",
+        "Access-Control-Allow-Methods":"GET,POST"
     })
     res.write("just a test");
     res.end();
